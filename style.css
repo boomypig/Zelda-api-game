@@ -38,6 +38,11 @@
   width: 20vw;
   align-self: center;
 }
+select,
+button {
+  border-radius: 5%;
+  border: none;
+}
 p {
   text-align: justify;
   font-weight: bold;
