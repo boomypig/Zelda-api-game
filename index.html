@@ -14,20 +14,19 @@
         <p>{{description}}</p>
         <div></div>
         <div id="input-and-button">
-          <input
-            type="text"
-            placeholder="Monster..."
-            id="guess_inp"
-            v-model="guess_inp"
-          />
+          <select id="mult-choice" v-model="guess">
+            <option v-for=" monster in monster_list.questions_list">
+              {{monster}}
+            </option>
+          </select>
           <button @click="submit_answer()" id="submit_button">
             Submit Answer
           </button>
         </div>
+
         <p>tries</p>
-        <p>{{ tries }}</p>
         <p>score</p>
-        <p> {{score}} </p>
+        <p>{{ score }}</p>
       </div>
     </div>
     <script src="app.js"></script>
