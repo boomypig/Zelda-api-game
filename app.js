@@ -5,7 +5,9 @@ Vue.createApp({
       description: "",
       rIndex: 0,
       guess: "",
+      guesses_left: 3,
       score: 0,
+      p_answer:"",
       monster_list: {
         answer: "",
         questions_list: [],
@@ -39,26 +41,26 @@ Vue.createApp({
       this.monster_list.questions_list.push(this.answer3);
       this.monster_list.questions_list.push(this.answer4);
 
-      for (let i = this.monster_list.questions_list.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const temp = this.monster_list.questions_list[i];
-        this.monster_list.questions_list[i] = this.monster_list.questions_list[j];
-        this.monster_list.questions_list[j] = temp;
-      }
+
+
+
     },
-
-
     submit_answer: function () {
       if (this.monster_list.answer == this.guess) {
         this.score += 1;
-        this.monster_list.questions_list = []
-        this.monster_list.answer = ""
+        this.monster_list.questions_list = [];
+        this.monster_list.answer = "";
         this.getDescriptionAnswer();
       } else {
-
+        this.guesses_left -= 1;
+          if (this.guesses_left === 0){
+            this.p_answer = this.monster_list.answer
+            this.monster_list.questions_list = [];
+            this.monster_list.answer = "";
+            this.guesses_left = 3
+            this.getDescriptionAnswer();
+          };
       }
-      console.log(this.monster_list.answer);
-      console.log(this.guess)
     },
   },
 
