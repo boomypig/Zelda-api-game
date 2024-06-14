@@ -1,6 +1,7 @@
 Vue.createApp({
     data(){
         return{
+            description:"",
             monsters: "",
 
         };
