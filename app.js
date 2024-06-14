@@ -8,6 +8,10 @@ Vue.createApp({
       guess_inp: "",
       answer: "",
       score: 0,
+      monster_list: {
+        answer: "",
+        questions_list: [],
+      },
     };
   },
   methods: {
@@ -28,11 +32,15 @@ Vue.createApp({
       this.answer2 = this.monsters[this.rIndex2].name;
       this.answer3 = this.monsters[this.rIndex3].name;
       this.answer4 = this.monsters[this.rIndex4].name;
+      this.monster_list.questions_list.push(this.answer);
+      this.monster_list.questions_list.push(this.answer2);
+      this.monster_list.questions_list.push(this.answer3);
+      this.monster_list.questions_list.push(this.answer4);
       console.log(this.answer);
       console.log(this.answer2);
       console.log(this.answer4);
       console.log(this.answer3);
-
+      console.log(this.monster_list.questions_list);
     },
 
 
@@ -40,16 +48,15 @@ Vue.createApp({
       if (this.guess_inp == this.answer) {
         this.score += 1;
         this.tries = 0;
-        this.getDescriptionAnswer()
+        this.getDescriptionAnswer();
       } else {
         this.tries += 1;
       }
-      console.log(this.guess_inp)
+      console.log(this.guess_inp);
     },
   },
 
   created: function () {
     this.getDescriptionAnswer();
-    
   },
 }).mount("#app");
