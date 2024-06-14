@@ -19,10 +19,19 @@ Vue.createApp({
       this.monsters = data.data;
 
       this.rIndex = Math.floor(Math.random() * this.monsters.length);
+      this.rIndex2 = Math.floor(Math.random() * this.monsters.length);
+      this.rIndex3 = Math.floor(Math.random() * this.monsters.length);
+      this.rIndex4 = Math.floor(Math.random() * this.monsters.length);
 
       this.description = this.monsters[this.rIndex].description;
       this.answer = this.monsters[this.rIndex].name;
+      this.answer2 = this.monsters[this.rIndex2].name;
+      this.answer3 = this.monsters[this.rIndex3].name;
+      this.answer4 = this.monsters[this.rIndex4].name;
       console.log(this.answer);
+      console.log(this.answer2);
+      console.log(this.answer4);
+      console.log(this.answer3);
 
     },
 
