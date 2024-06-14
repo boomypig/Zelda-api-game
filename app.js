@@ -13,7 +13,9 @@ Vue.createApp({
             console.log(this.monsters)
 
         }
-
+    },
+    created: function () {
+        this.getData();
     },
 
 }).mount('#app');
