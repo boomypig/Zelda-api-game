@@ -4,9 +4,7 @@ Vue.createApp({
       monsters: "",
       description: "",
       rIndex: 0,
-      tries: 0,
-      guess_inp: "",
-      answer: "",
+      guess: "",
       score: 0,
       monster_list: {
         answer: "",
@@ -28,31 +26,38 @@ Vue.createApp({
       this.rIndex4 = Math.floor(Math.random() * this.monsters.length);
 
       this.description = this.monsters[this.rIndex].description;
-      this.answer = this.monsters[this.rIndex].name;
+
+      this.monster_list.answer = this.monsters[this.rIndex].name;
+    
       this.answer2 = this.monsters[this.rIndex2].name;
       this.answer3 = this.monsters[this.rIndex3].name;
       this.answer4 = this.monsters[this.rIndex4].name;
-      this.monster_list.questions_list.push(this.answer);
+
+      this.monster_list.questions_list.push(this.monster_list.answer);
+
       this.monster_list.questions_list.push(this.answer2);
       this.monster_list.questions_list.push(this.answer3);
       this.monster_list.questions_list.push(this.answer4);
-      console.log(this.answer);
+
       console.log(this.answer2);
       console.log(this.answer4);
       console.log(this.answer3);
+      
       console.log(this.monster_list.questions_list);
     },
 
 
     submit_answer: function () {
-      if (this.guess_inp == this.answer) {
+      if (this.monster_list.answer == this.guess) {
         this.score += 1;
-        this.tries = 0;
+        this.monster_list.questions_list = []
+        this.monster_list.answer = ""
         this.getDescriptionAnswer();
       } else {
-        this.tries += 1;
+
       }
-      console.log(this.guess_inp);
+      console.log(this.monster_list.answer);
+      console.log(this.guess)
     },
   },
 
