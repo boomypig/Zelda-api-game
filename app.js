@@ -11,7 +11,7 @@ Vue.createApp({
     };
   },
   methods: {
-    getMonsterDescription: async function () {
+    getDescriptionAnswer: async function () {
       let response = await fetch(
         "https://botw-compendium.herokuapp.com/api/v3/compendium/category/monsters"
       );
@@ -19,8 +19,9 @@ Vue.createApp({
       this.monsters = data.data;
       
       this.rIndex = Math.floor(Math.random() * this.monsters.length);
-      this.description = this.monsters[this.rIndex].description
-      console.log(this.monsters[this.rIndex].name)
+      this.description = this.monsters[this.rIndex].description;
+      this.answer = this.monsters[this.rIndex].name;
+      console.log(this.answer);
 
 
     },
@@ -37,7 +38,7 @@ Vue.createApp({
 
 
   created: function () {
-    this.getMonsterDescription();
+    this.getDescriptionAnswer();
     
   },
 
