@@ -26,7 +26,7 @@ Vue.createApp({
 
     },
 
-    
+
     submit_answer: function () {
       if (this.guess_inp == this.answer) {
         this.score += 1;
