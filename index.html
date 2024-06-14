@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Zelda Quiz</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="app">
-        <!-- DID YOU GET IT -->
-        <button @click="getMonsters">Get Data</button>
+      <h1>Zelda Quiz</h1>
+      <p>{{description}}</p>
+      <input
+        type="text"
+        placeholder="Monster..."
+        id="guess_inp"
+        v-model="guess_inp"
+      />
+      <p>tries</p>
+      <p>score</p>
     </div>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
