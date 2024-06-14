@@ -17,28 +17,22 @@ Vue.createApp({
       );
       let data = await response.json();
       this.monsters = data.data;
-      
+
       this.rIndex = Math.floor(Math.random() * this.monsters.length);
-      this.description = this.monsters[this.rIndex].description
-
-
+      this.description = this.monsters[this.rIndex].description;
+      console.log(this.monster[this.rIndex].name);
     },
     submit_answer: function () {
-      if (this.guess_inp == this.answer){
-        this.score += 1
-        this.tries = 0
-      }else{
-        this.tries += 1
+      if (this.guess_inp == this.answer) {
+        this.score += 1;
+        this.tries = 0;
+      } else {
+        this.tries += 1;
       }
-    }
+    },
   },
-
-
 
   created: function () {
     this.getMonsterDescription();
-    
   },
-
-
 }).mount("#app");
