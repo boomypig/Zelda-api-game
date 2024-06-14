@@ -19,8 +19,15 @@ Vue.createApp({
       this.monsters = data.data;
 
       this.rIndex = Math.floor(Math.random() * this.monsters.length);
+<<<<<<< HEAD
       this.description = this.monsters[this.rIndex].description;
       console.log(this.monster[this.rIndex].name);
+=======
+      this.description = this.monsters[this.rIndex].description
+      console.log(this.monsters[this.rIndex].name)
+
+
+>>>>>>> d7175427c0489972900d2d9ea1755e698d66a555
     },
     submit_answer: function () {
       if (this.guess_inp == this.answer) {
