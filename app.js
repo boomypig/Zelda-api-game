@@ -31,9 +31,11 @@ Vue.createApp({
       if (this.guess_inp == this.answer) {
         this.score += 1;
         this.tries = 0;
+        this.getDescriptionAnswer()
       } else {
         this.tries += 1;
       }
+      console.log(this.guess_inp)
     },
   },
 
