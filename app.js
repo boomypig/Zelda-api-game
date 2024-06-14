@@ -11,7 +11,7 @@ Vue.createApp({
         "https://botw-compendium.herokuapp.com/api/v3/compendium/category/monsters"
       );
       let data = await response.json();
-      this.monsters = data;
+      this.monsters = data.data[0].description;
       console.log(this.monsters);
     },
   },
