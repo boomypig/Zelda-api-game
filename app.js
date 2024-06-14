@@ -20,6 +20,7 @@ Vue.createApp({
       
       this.rIndex = Math.floor(Math.random() * this.monsters.length);
       this.description = this.monsters[this.rIndex].description
+      console.log(this.monsters[this.rIndex].name)
 
 
     },
