@@ -40,8 +40,15 @@
 }
 select,
 button {
-  border-radius: 5%;
+  border-radius: 10px;
   border: none;
+  height: 5vh;
+  cursor: pointer;
+}
+button:hover {
+  transition-duration: 0.25s;
+  transition-timing-function: linear;
+  background-color: wheat;
 }
 p {
   text-align: justify;
