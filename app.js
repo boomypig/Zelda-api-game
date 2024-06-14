@@ -1,9 +1,6 @@
 Vue.createApp({
-    data(){
-        return{
-        };
-    },
-    methods: {
-
-    },
-}).mount('#app');
+  data() {
+    return {};
+  },
+  methods: {},
+}).mount("#app");
