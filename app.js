@@ -4,6 +4,10 @@ Vue.createApp({
       monsters: "",
       description: "",
       rIndex: 0,
+      tries: 0,
+      guess_inp: "",
+      answer: "",
+      score: 0,
     };
   },
   methods: {
@@ -16,13 +20,17 @@ Vue.createApp({
       
       this.rIndex = Math.floor(Math.random() * this.monsters.length);
       this.description = this.monsters[this.rIndex].description
-      console.log(this.description);
+
 
     },
-
-
-
-
+    submit_answer: function () {
+      if (this.guess_inp == this.answer){
+        this.score += 1
+        this.tries = 0
+      }else{
+        this.tries += 1
+      }
+    }
   },
 
 
