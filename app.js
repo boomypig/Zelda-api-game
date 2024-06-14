@@ -24,10 +24,9 @@ Vue.createApp({
       this.answer = this.monsters[this.rIndex].name;
       console.log(this.answer);
 
-
-
-
     },
+
+    
     submit_answer: function () {
       if (this.guess_inp == this.answer) {
         this.score += 1;
