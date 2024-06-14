@@ -3,6 +3,10 @@ Vue.createApp({
     return {
       monsters: "",
       description: "",
+      tries: 0,
+      guess_inp: "",
+      answer: "",
+      score: 0,
     };
   },
   methods: {
@@ -14,6 +18,14 @@ Vue.createApp({
       this.monsters = data.data[0].description;
       console.log(this.monsters);
     },
+    submit_answer: function () {
+      if (this.guess_inp == this.answer){
+        this.score += 1
+        this.tries = 0
+      }else{
+        this.tries += 1
+      }
+    }
   },
   created: function () {
     this.getMonsters();
