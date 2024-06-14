@@ -39,11 +39,12 @@ Vue.createApp({
       this.monster_list.questions_list.push(this.answer3);
       this.monster_list.questions_list.push(this.answer4);
 
-      console.log(this.answer2);
-      console.log(this.answer4);
-      console.log(this.answer3);
-      
-      console.log(this.monster_list.questions_list);
+      for (let i = this.monster_list.questions_list.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = this.monster_list.questions_list[i];
+        this.monster_list.questions_list[i] = this.monster_list.questions_list[j];
+        this.monster_list.questions_list[j] = temp;
+      }
     },
 
 
